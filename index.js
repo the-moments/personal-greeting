@@ -3,8 +3,12 @@
 // form
 const form = document.querySelector('form');
 
-// div reference: for hiding and displaying the input
+// div reference: for hiding and displaying the `input` block
 const rememberDiv = document.querySelector('.remember');
+
+// div reference: for hiding and displaying the `forget` block
+const forgetDiv = document.querySelector('.forget');
+forgetDiv.setAttribute('style', 'display: none');
 
 // input
 const save = document.querySelector('#entername');
@@ -61,20 +65,27 @@ function saveName(name) {
  */
 function updateUI(name) {
     if (name !== undefined) {
-        
         const localName = localStorage.getItem(name);
 
         h1.textContent = `Welcome, ${localName}`;
         p.textContent = `Welcome to our website, ${localName}! We hope you have fun while you are here.`;
 
-        rememberDiv.setAttribute('style', 'display:none');
+        // hide the input block
+        rememberDiv.setAttribute('style', 'display: none');
+
+        // unhide the forget block
+        forgetDiv.setAttribute('style', 'display: block');
 
     } else {
 
         h1.textContent = 'Our website';
         p.textContent = 'Welcome to our website.';
 
-        rememberDiv.setAttribute('style', 'display:block');
+        // unhide the `input` block
+        rememberDiv.setAttribute('style', 'display: block');
+
+        // hide the `forget` block
+        forgetDiv.setAttribute('style', 'display: none');
 
     }
 }
