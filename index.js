@@ -52,7 +52,7 @@ forgetBtn.addEventListener('click', () => {
 
 // helper function: saves name to the local storage
 /**
- * @param {String} name The date
+ * @param {String} name: key of the data stored
  */
 function saveName(name) {
     localStorage.setItem('name', name);
@@ -61,7 +61,7 @@ function saveName(name) {
 
 // helper function: updates the UI
 /**
- * @param {String} name The date
+ * @param {String} name: key of the data stored
  */
 function updateUI(name) {
     if (name !== undefined) {
